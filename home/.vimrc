@@ -1,0 +1,51 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
+
+call plug#end()
+
+set wildmenu
+set wildmode=longest:full,full
+
+set splitbelow
+set splitright
+
+set number
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+set background=dark
+colorscheme palenight
+
+set laststatus=2
+let g:lightline={'colorscheme': 'palenight'}
+
+map <C-P> :Files .<CR>
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Move line/block up/down using Alt-K/J
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+
+" Traps compilation mappings
+nnoremap <F2> :! (cd nix; ./mktraps.sh -j 6)
+nnoremap <F3> :! (cd nix; ./mkinstall.sh)
+nnoremap <F4> :! (cd nix; ./mkcloud.sh "traps_linux-*-dbg.sh" "17157de12e8c9e43ae9bfa8458b150c3" "https://ch-cpa-dev.mybrz.net")
+nnoremap <F9> :! (cd nix; ./mktraps.sh all -j 6)
+
+" Automatically remove all trailing spaces when saving
+autocmd BufWritePre * %s/\s\+$//e
+
+syntax on

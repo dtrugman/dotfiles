@@ -1,0 +1,21 @@
+[http]
+	sslVerify = false
+[user]
+	email = dtrugman@paloaltonetworks.com
+	name = Daniel Trugman
+[core]
+	editor = vim
+[push]
+	default = simple
+[alias]
+	l = log --graph --oneline --decorate
+	ll = log --graph --oneline --decorate --branches --tags
+	lll = log --graph --oneline --decorate --all
+	b = branch
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[credential]
+	helper = cache
