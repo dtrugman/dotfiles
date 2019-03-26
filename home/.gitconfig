@@ -12,6 +12,9 @@
 	ll = log --graph --oneline --decorate --branches --tags
 	lll = log --graph --oneline --decorate --all
 	b = branch
+    s = status
+    d = diff
+    ds = diff --staged
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
