@@ -41,9 +41,11 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " Traps compilation mappings
 nnoremap <F2> :! (cd nix; ./mktraps.sh -j 6)
-nnoremap <F3> :! (cd nix; ./mkinstall.sh)
-nnoremap <F4> :! (cd nix; ./mkcloud.sh "traps_linux-*-dbg.sh" "17157de12e8c9e43ae9bfa8458b150c3" "https://ch-cpa-dev.mybrz.net")
-nnoremap <F9> :! (cd nix; ./mktraps.sh all -j 6)
+nnoremap <F3> :! (cd nix; rm traps_linux-*.sh; ./mkinstall.sh -n; ./mkcloud.sh traps_linux-*-dbg.sh "17157de12e8c9e43ae9bfa8458b150c3" "https://ch-cpa-dev.mybrz.net")
+nnoremap <F5> :! (cd nix; ./mkinstall.sh -n)
+nnoremap <F6> :! (cd nix; ./mkcloud.sh traps_linux-*-dbg.sh "17157de12e8c9e43ae9bfa8458b150c3" "https://ch-cpa-dev.mybrz.net")
+nnoremap <F7> :! (cd nix; ./scripts/mkproto.sh)
+nnoremap <F8> :! (cd nix; ./mktraps.sh all -j 6)
 
 " Automatically remove all trailing spaces when saving
 autocmd BufWritePre * %s/\s\+$//e
