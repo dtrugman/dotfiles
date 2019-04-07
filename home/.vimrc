@@ -33,6 +33,10 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Open folder explorer
+
+nnoremap <C-e> :Ex<Enter>
+
 " Move line/block up/down using Alt-K/J
 inoremap <C-j> <Esc>:m .+1<CR>==gi
 inoremap <C-k> <Esc>:m .-2<CR>==gi
