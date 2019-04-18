@@ -15,6 +15,11 @@
     s = status
     d = diff
     ds = diff --staged
+    amend = commit --amend
+    r = rebase
+    rc = rebase --continue
+    ri = rebase -i
+    ris = rebase -i --autosquash
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
