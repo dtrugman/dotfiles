@@ -126,5 +126,8 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
+stty susp undef
+bind '"\C-z":"fg\015"'
+
 set -o vi
 
