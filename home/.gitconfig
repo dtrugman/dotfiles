@@ -15,7 +15,8 @@
     s = status
     d = diff
     ds = diff --staged
-    amend = commit --amend
+    c = commit
+    ca = commit --amend
     r = rebase
     rc = rebase --continue
     ri = rebase -i
@@ -27,3 +28,4 @@
 	required = true
 [credential]
 	helper = cache
+    timeout = 604800
