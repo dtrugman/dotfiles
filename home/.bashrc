@@ -116,18 +116,16 @@ if ! shopt -oq posix; then
   fi
 fi
 
-declare -r vagrant_completion="/opt/vagrant/embedded/gems/2.2.0/gems/vagrant-2.2.0/contrib/bash/completion.sh"
-if [[ -f "$vagrant_completion" ]]; then
-    . "$vagrant_completion"
-fi
+[ -f "/opt/vagrant/embedded/gems/2.2.0/gems/vagrant-2.2.0/contrib/bash/completion.sh" ] && \
+    source "/opt/vagrant/embedded/gems/2.2.0/gems/vagrant-2.2.0/contrib/bash/completion.sh"
 
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
 
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+[ -f "$HOME/.homesick/repos/homeshick/homeshick.sh" ] && source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+
+set -o vi
 
 stty susp undef
 bind '"\C-z":"fg\015"'
-
-set -o vi
 
