@@ -119,9 +119,10 @@ fi
     source "/opt/vagrant/embedded/gems/2.2.0/gems/vagrant-2.2.0/contrib/bash/completion.sh"
 
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
-[ -f "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
 
-[ -f "$HOME/.homesick/repos/homeshick/homeshick.sh" ] && source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+[[ -f "$HOME/.fzf.bash" ]] && source "$HOME/.fzf.bash"
+
+[[ -s "$HOME/.homesick/repos/homeshick/homeshick.sh" ]] && source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
 set -o vi
 
