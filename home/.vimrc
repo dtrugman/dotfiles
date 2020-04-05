@@ -8,6 +8,30 @@ Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
+" Use swap files to protect only between writes
+" Use default values of updatecount(200 keystrokes) and updatetime(4s)
+set swapfile
+" Save swap files under the vim directory, not next to the file
+set directory^=~/.vim/swap//
+
+" Protect against crash-during-write
+set writebackup
+" But do not persist backup after successful write
+set nobackup
+" Use rename-and-write-new method whenever safe
+set backupcopy=auto
+" Patch required to honor double slash at end
+if has("patch-8.1.0251")
+    " Consolidate the writebackups -- not a big
+    " deal either way, since they usually get deleted
+    set backupdir^=~/.vim/backup//
+end
+
+" Persist the undo tree for each file
+set undofile
+set undodir^=~/.vim/undo//
+
+" Configure wildcard search menu
 set wildmenu
 set wildmode=longest:full,full
 
