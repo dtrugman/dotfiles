@@ -35,30 +35,41 @@ set undodir^=~/.vim/undo//
 set wildmenu
 set wildmode=longest:full,full
 
+" Configure default h/v split direction
 set splitbelow
 set splitright
 
+" Show line numbers
 set number
 
+" Configure tabs as 4 spaces
 set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" Configure searching
+set hlsearch "Highlight results
+set incsearch "Start searching while you type
+
+" Configure theme
 set background=dark
 colorscheme palenight
 
+" Configure status line
 set laststatus=2
 let g:lightline={'colorscheme': 'palenight'}
 
-map <C-P> :Files .<CR>
+" Use CTRL+p for file fuzzy search
+map <C-p> :Files .<CR>
 
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+
+" Move between panes without CTRL+w prefix
+nnoremap <C-j> <C-W><C-J>
+nnoremap <C-k> <C-W><C-K>
+nnoremap <C-l> <C-W><C-L>
+nnoremap <C-h> <C-W><C-H>
 
 " Open folder explorer
-
 nnoremap <C-e> :Ex<Enter>
 
 " Move line/block up/down using Alt-K/J
