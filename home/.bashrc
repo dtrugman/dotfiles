@@ -132,3 +132,4 @@ stty stop undef
 stty susp undef
 bind '"\C-z":"fg\015"'
 
+export PATH="$PATH:$HOME/bin"
