@@ -81,9 +81,8 @@ vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " Traps compilation mappings
-nnoremap <F2> :! (cd nix; ./mktraps.sh -j 6)
-nnoremap <F3> :! (cd nix; rm traps_linux-*.sh; ./mkinstall.sh -n; ./mkcloud.sh traps_linux-*-dbg.sh "17157de12e8c9e43ae9bfa8458b150c3" "https://ch-ll-nix.mybrz.net")
-nnoremap <F4> :! cp nix/traps_linux-*-cloud.sh ../junk
+nnoremap <F2> :! (cd nix; ./mktraps.sh -j 8)
+nnoremap <F3> :! (cd nix; rm cortex-agent-*.sh; XDR_ENV=dev ./mkinstall.sh --shell --no-strip --dist-id 92d50a8f0b834e5887cc52df3cbef166)
 nnoremap <F5> :! (cd nix; . env.txt; ./scripts/mkproto.sh)
 nnoremap <F6> :! (cd nix; ./mktraps.sh all -j 6)
 nnoremap <F9> :! make
