@@ -62,6 +62,8 @@ let g:lightline={'colorscheme': 'palenight'}
 " Use CTRL+p for file fuzzy search
 map <C-p> :Files .<CR>
 
+" Search highlight
+nnoremap <C-n> :nohlsearch<CR>
 
 " Move between panes without CTRL+w prefix
 nnoremap <C-j> <C-W><C-J>
