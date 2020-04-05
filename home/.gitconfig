@@ -1,17 +1,19 @@
 [http]
-	sslVerify = false
+    sslVerify = false
 [user]
-	email = dtrugman@paloaltonetworks.com
-	name = Daniel Trugman
+    email = dtrugman@paloaltonetworks.com
+    name = Daniel Trugman
 [core]
-	editor = vim
+    editor = vim
 [push]
-	default = simple
+    default = simple
 [alias]
-	l = log --graph --oneline --decorate
-	ll = log --graph --oneline --decorate --branches --tags
-	lll = log --graph --oneline --decorate --all
-	b = branch
+    l = log --graph --oneline --decorate
+    ll = log --graph --oneline --decorate --branches --tags
+    lll = log --graph --oneline --decorate --all
+    a = add
+    au = add -u
+    b = branch
     s = status
     d = diff
     ds = diff --staged
@@ -21,11 +23,14 @@
     rc = rebase --continue
     ri = rebase -i
     ris = rebase -i --autosquash
+    co = checkout
+    cp = cherry-pick
+    cpc = cherry-pick --continue
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 [credential]
-	helper = cache
+    helper = cache --timeout=3600
     timeout = 604800
