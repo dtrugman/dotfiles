@@ -137,3 +137,5 @@ export PATH="$PATH:$HOME/bin"
 
 alias vissh="vim ~/.ssh/config"
 alias sr="shellrunner"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
