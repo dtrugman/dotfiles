@@ -1,7 +1,7 @@
 [http]
     sslVerify = false
 [user]
-    email = dtrugman@paloaltonetworks.com
+    email = dtrugman@gmail.com
     name = Daniel Trugman
 [core]
     editor = vim
