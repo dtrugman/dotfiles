@@ -26,6 +26,7 @@
     co = checkout
     cp = cherry-pick
     cpc = cherry-pick --continue
+    fix = commit --fixup
 [filter "lfs"]
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
