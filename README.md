@@ -5,6 +5,8 @@ git clone https://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshi
 printf '\nsource "$HOME/.homesick/repos/homeshick/homeshick.sh"' >> $HOME/.bashrc
 
 homeshick clone https://github.com/dtrugman/dotfiles.git
+-OR-
+homeshick clone git@github.com:dtrugman/dotfiles.git
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
