@@ -1,0 +1,54 @@
+# This script should be sourced by .bashrc, .bash_profile, .profile, etc.
+
+set_aliases() {
+    if [ -f ~/.bash_aliases ]; then
+        . ~/.bash_aliases
+    fi
+}
+
+set_prompt() {
+    export PS1="\[\e[1;37m\]\u\[\e[m\]\[\e[1;32m\]@\[\e[m\]\[\e[1;32m\]\W\[\e[m\] \[\e[1;32m\]>\[\e[m\]\[\e[1;33m\]>\[\e[m\]\[\e[1;31m\]>\[\e[m\] "
+}
+
+set_locale() {
+    export LC_ALL="C"
+}
+
+set_terminal_vi_mode() {
+    set -o vi
+}
+
+set_terminal_key_binds() {
+    # disable CTRL-S/Q (XON/XOFF)
+    stty stop undef
+
+    # Allow CTRL-Z toggeling
+    stty susp undef
+    bind '"\C-z":"fg\015"'
+}
+
+set_path() {
+    export PATH="$PATH:$HOME/bin"
+}
+
+source() {
+    set_aliases
+    set_prompt
+    set_locale
+    set_terminal_vi_mode
+    set_terminal_key_binds
+}
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# If executed and not sourced, don't do anything
+if [[ "$0" == "$BASH_SOURCE" ]]; then
+    echo "This script should be sourced, not executed"
+    return
+fi
+
+source

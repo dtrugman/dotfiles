@@ -1,0 +1,37 @@
+[http]
+    sslVerify = false
+[user]
+    email = dtrugman@gmail.com
+    name = Daniel Trugman
+[core]
+    editor = vim
+[push]
+    default = simple
+[alias]
+    l = log --graph --oneline --decorate
+    ll = log --graph --oneline --decorate --branches --tags
+    lll = log --graph --oneline --decorate --all
+    a = add
+    au = add -u
+    b = branch
+    s = status
+    d = diff
+    ds = diff --staged
+    c = commit
+    ca = commit --amend
+    r = rebase
+    rc = rebase --continue
+    ri = rebase -i
+    ris = rebase -i --autosquash
+    co = checkout
+    cp = cherry-pick
+    cpc = cherry-pick --continue
+    fix = commit --fixup
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[credential]
+    helper = cache --timeout=3600
+    timeout = 604800
