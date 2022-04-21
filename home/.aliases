@@ -18,4 +18,16 @@ cls() {
     done
 }
 
-alias vissh="vim ~/.ssh/config"
+__safe_alias() {
+    declare -r alias="$1"
+    declare -r command="$2"
+
+    if alias "$alias" &>/dev/null; then
+        return
+    fi
+
+    alias "$alias"="$command"
+}
+
+__safe_alias "vissh" "vim ~/.ssh/config"
+__safe_alias "ll" "ls --color=auto -alF"

@@ -1,8 +1,8 @@
 # This script should be sourced by .bashrc, .bash_profile, .profile, etc.
 
 set_aliases() {
-    if [ -f ~/.bash_aliases ]; then
-        . ~/.bash_aliases
+    if [ -f ~/.aliases ]; then
+        . ~/.aliases
     fi
 }
 
@@ -12,10 +12,6 @@ set_prompt() {
 
 set_locale() {
     export LC_ALL="C"
-}
-
-set_terminal_vi_mode() {
-    set -o vi
 }
 
 set_terminal_key_binds() {
@@ -35,14 +31,13 @@ source() {
     set_aliases
     set_prompt
     set_locale
-    set_terminal_vi_mode
     set_terminal_key_binds
 }
 
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
-      *) return;;
+    *) return;;
 esac
 
 # If executed and not sourced, don't do anything

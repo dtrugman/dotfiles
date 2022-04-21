@@ -1,5 +1,3 @@
-[http]
-    sslVerify = false
 [user]
     email = dtrugman@gmail.com
     name = Daniel Trugman
@@ -27,11 +25,6 @@
     cp = cherry-pick
     cpc = cherry-pick --continue
     fix = commit --fixup
-[filter "lfs"]
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
-    process = git-lfs filter-process
-    required = true
 [credential]
     helper = cache --timeout=3600
     timeout = 604800
