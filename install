@@ -1,18 +1,11 @@
-git clone https://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
+# Add shell config to all rc files
+rcfiles=(".bashrc" ".zshrc")
+for rc in "${rcfiles[@]}"; do
+    if [[ -f "$HOME/$rc" ]]; then
+        printf '\n[[ -s "$HOME/.shell_config" ]] && source "$HOME/.shell_config"' >> "$HOME/$rc"
+    fi
+done
 
-printf '\n[[ -s "$HOME/.homesick/repos/homeshick/homeshick.sh" ]] && source "$HOME/.homesick/repos/homeshick/homeshick.sh"' >> $HOME/.bashrc
-source $HOME/.homesick/repos/homeshick/homeshick.sh
-
-yes | homeshick clone https://github.com/dtrugman/dotfiles.git
-
-if [[ -f "$HOME/.bashrc" ]]; then
-    printf '\n[[ -s "$HOME/.shell_config" ]] && source "$HOME/.shell_config"' >> $HOME/.bashrc
-fi
-
-if [[ -f "$HOME/.zshrc" ]]; then
-    printf '\n[[ -s "$HOME/.shell_config" ]] && source "$HOME/.shell_config"' >> $HOME/.zshrc
-fi
-
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
+# Install VIM plug and install plugins from the vimrc config
+curl -fLo "$HOME/.vim/autoload/plug.vim" --create-dirs "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 vim --noplugin -c "PlugInstall" -c "q" -c "q"
