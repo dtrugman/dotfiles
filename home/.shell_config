@@ -49,10 +49,4 @@ case $- in
     *) return;;
 esac
 
-# If executed and not sourced, don't do anything
-if [[ "$0" == "$BASH_SOURCE" ]]; then
-    echo "This script should be sourced, not executed"
-    return
-fi
-
 source
