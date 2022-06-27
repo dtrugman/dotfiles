@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'drewtempelmeyer/palenight.vim'
+Plug 'sickill/vim-monokai'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -66,11 +66,17 @@ set incsearch "Start searching while you type
 
 " Configure theme
 set background=dark
-colorscheme palenight
+colorscheme monokai
 
 " Configure status line
 set laststatus=2
-let g:lightline={'colorscheme': 'palenight'}
+let g:lightline={
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ }
 
 " Use CTRL+p for file fuzzy search
 map <C-p> :Files .<CR>
