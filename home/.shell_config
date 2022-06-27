@@ -32,7 +32,7 @@ set_terminal_key_binds() {
 }
 
 set_path() {
-    export PATH="$PATH:$HOME/bin"
+    # Nothing here yet
 }
 
 source() {
@@ -40,6 +40,7 @@ source() {
     set_prompt
     set_locale
     set_terminal_key_binds
+    set_path
 }
 
 # If not running interactively, don't do anything
