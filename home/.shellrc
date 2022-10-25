@@ -38,7 +38,7 @@ set_path() {
     # Nothing here yet
 }
 
-source() {
+source_me() {
     set_aliases
     set_prompt
     set_locale
@@ -52,4 +52,4 @@ case $- in
     *) return;;
 esac
 
-source
+source_me

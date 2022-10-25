@@ -1,6 +1,5 @@
-rc_append() {
-    local shell="$1"
-    local file="$HOME/.${shell}rc"
+__append() {
+    local file="$1"
     [[ -f "$file" ]] || return 0
 
     local line="$2"
@@ -8,9 +7,8 @@ rc_append() {
 }
 
 # Add shell config to all rc files
-shells=("bash" "zsh")
-for shell in "${shells[@]}"; do
-    rc_append "$shell" '[[ -s "$HOME/.shell_config" ]] && source "$HOME/.shell_config"'
+for shell in "bash" "zsh"; do
+    __append "$HOME/.${shell}rc" '[[ -s "$HOME/.shellrc" ]] && source "$HOME/.shellrc"'
 done
 
 # Install VIM plug and install plugins from the vimrc config
