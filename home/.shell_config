@@ -23,12 +23,15 @@ set_terminal_key_binds() {
         return 0
     fi
 
-    # disable CTRL-S/Q (XON/XOFF)
+    # Disable CTRL-S/Q (XON/XOFF)
     stty stop undef
 
     # Allow CTRL-Z toggeling
     stty susp undef
     bind '"\C-z":"fg\015"'
+
+    # Set navigation to VI mode
+    set -o vi
 }
 
 set_path() {
