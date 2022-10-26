@@ -99,6 +99,9 @@ inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
+" Toggle line numbers
+nnoremap <C-t> :set invnumber<Enter>
+
 " Toggle paste mode
 set pastetoggle=<C-y>
 
@@ -124,9 +127,6 @@ function! XTermPasteBegin()
   set paste
   return ""
 endfunction
-
-" Toggle line numbers using F10
-nnoremap <F10> :set invnumber<Enter>
 
 " Automatically remove all trailing spaces when saving
 autocmd BufWritePre * %s/\s\+$//e
