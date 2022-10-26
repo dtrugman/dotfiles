@@ -29,5 +29,4 @@ __safe_alias() {
     alias "$alias"="$command"
 }
 
-__safe_alias "vissh" "vim ~/.ssh/config"
 __safe_alias "ll" "ls --color=auto -alF"
