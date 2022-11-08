@@ -29,8 +29,9 @@ set_terminal_key_binds() {
     # Allow CTRL-Z toggeling
     stty susp undef
     bind '"\C-z":"fg\015"'
+}
 
-    # Set navigation to VI mode
+set_terminal_vi_mode() {
     set -o vi
 }
 
@@ -39,11 +40,12 @@ set_path() {
 }
 
 source_me() {
+    set_path
     set_aliases
     set_prompt
     set_locale
     set_terminal_key_binds
-    set_path
+    set_terminal_vi_mode
 }
 
 # If not running interactively, don't do anything
